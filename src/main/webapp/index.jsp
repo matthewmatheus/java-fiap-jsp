@@ -5,15 +5,23 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Exemplo Sessão</title>
+    <%@ include file = "header.jsp" %>
+
 </head>
 <body>
+<%@ include file = "menu.jsp" %>
+<div class="container">
+
 <h2>Bem vindo usuário [<%=session.getAttribute("attrUsuario")%>]
     a página Inicial do Sistema!</h2>
 <p><a href="servicos.jsp">SERVIÇOS</a></p>
 <p><a href="login.jsp">LOGIN</a></p>
 
 
-<%
+
+
+
+    <%
     Integer hitsCount = (Integer)application.getAttribute("hitCounter");
     if( hitsCount ==null || hitsCount == 0 ){
         /* First visit */
@@ -28,5 +36,8 @@
 
 %>
 <p>Total number of visits: <%= hitsCount%></p>
+</div>
+
+<%@ include file = "footer.jsp" %>
 </body>
 </html>
